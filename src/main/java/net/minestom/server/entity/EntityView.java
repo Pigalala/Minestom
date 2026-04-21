@@ -256,7 +256,6 @@ final class EntityView {
             references().forEach(entity -> {
                 if (entity == EntityView.this.entity || !visibilityPredicate.test(entity)) return;
                 if (entity instanceof Player player && manualViewers.contains(player)) return;
-                if (entity.getVehicle() != null) return;
                 action.accept(entity);
             });
         }
